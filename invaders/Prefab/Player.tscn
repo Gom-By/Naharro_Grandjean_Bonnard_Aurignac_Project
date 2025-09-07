@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds5i0m42gfvyv"]
+[gd_scene load_steps=6 format=3 uid="uid://ds5i0m42gfvyv"]
 
 [ext_resource type="Script" path="res://Scripts/player_movement.gd" id="1_7rlfd"]
 [ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_6hevb"]
+[ext_resource type="PackedScene" uid="uid://b2gj8t4k3wno1" path="res://Prefab/Components/health_component.tscn" id="3_0jax2"]
+[ext_resource type="Script" path="res://Scripts/shooting_component.gd" id="4_u1ixw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_exg2l"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 position = Vector2(556, 287)
 script = ExtResource("1_7rlfd")
 
@@ -15,3 +17,8 @@ shape = SubResource("CircleShape2D_exg2l")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_6hevb")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_0jax2")]
+
+[node name="ShootingComponent" type="Node" parent="."]
+script = ExtResource("4_u1ixw")
