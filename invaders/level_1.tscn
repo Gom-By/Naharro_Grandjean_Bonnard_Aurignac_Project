@@ -1,9 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqmmq0spvvj83"]
+[gd_scene load_steps=8 format=3 uid="uid://dqmmq0spvvj83"]
 
 [ext_resource type="Script" path="res://Scripts/linear_movement.gd" id="1_tn7uk"]
 [ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="1_u83cq"]
 [ext_resource type="PackedScene" uid="uid://ds5i0m42gfvyv" path="res://Prefab/Player.tscn" id="2_ghhsa"]
+[ext_resource type="PackedScene" uid="uid://b2gj8t4k3wno1" path="res://Prefab/Components/health_component.tscn" id="3_5u0r6"]
 [ext_resource type="PackedScene" uid="uid://dfet3gi67w0vl" path="res://Prefab/bullet.tscn" id="3_dhodo"]
+
+[sub_resource type="GDScript" id="GDScript_ujxdt"]
+script/source = "extends CharacterBody2D
+
+func _ready() -> void:
+	$CollisionShape2D.connect(\"area_entered\", _on_area_entered)
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group(\"p_bullets\"):
+		$HealthComponent.take_damage(1)
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0n31"]
 
@@ -12,6 +24,7 @@
 [node name="Enemy" type="CharacterBody2D" parent="." groups=["enemies"]]
 position = Vector2(401, 92)
 collision_layer = 2
+script = SubResource("GDScript_ujxdt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 shape = SubResource("CircleShape2D_l0n31")
@@ -31,7 +44,10 @@ text = "Ennemy"
 script = ExtResource("1_tn7uk")
 target_position = Vector2(0, 1)
 
-[node name="Bullet" parent="." instance=ExtResource("3_dhodo")]
+[node name="HealthComponent" parent="Enemy" instance=ExtResource("3_5u0r6")]
+max_hit_points = 3
+
+[node name="Bullet" parent="." groups=["p_bullets"] instance=ExtResource("3_dhodo")]
 
 [node name="Player" parent="." instance=ExtResource("2_ghhsa")]
 collision_mask = 2
