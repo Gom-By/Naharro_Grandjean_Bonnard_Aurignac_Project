@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Invaders"
-run/main_scene="res://level_1.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="uid://dvtf5yrt2t3ak"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [rendering]
