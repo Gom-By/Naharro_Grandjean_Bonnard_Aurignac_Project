@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dqmmq0spvvj83"]
 
-[ext_resource type="Script" path="res://Scripts/enemies.gd" id="1_tn7uk"]
+[ext_resource type="Script" uid="uid://dt84nr0q58oyr" path="res://Scripts/enemies.gd" id="1_tn7uk"]
 [ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="1_u83cq"]
 [ext_resource type="PackedScene" uid="uid://ds5i0m42gfvyv" path="res://Prefab/Player.tscn" id="2_ghhsa"]
 
