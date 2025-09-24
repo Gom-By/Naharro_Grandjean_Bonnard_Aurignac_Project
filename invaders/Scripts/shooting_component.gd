@@ -4,7 +4,7 @@ extends Node
 
 func _ready() -> void:
 	var timer := Timer.new()
-	timer.wait_time = 0.25
+	timer.wait_time = 0.3
 	timer.one_shot = false
 	timer.autostart = true
 	add_child(timer)

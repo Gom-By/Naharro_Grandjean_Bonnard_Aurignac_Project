@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1fy27qcok2y6"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_ctfer"]
+[ext_resource type="Script" uid="uid://c1wfkn5n754qc" path="res://Scripts/enemy.gd" id="1_ctfer"]
 [ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_y83vb"]
-[ext_resource type="Script" path="res://Scripts/linear_movement.gd" id="3_m2fcd"]
+[ext_resource type="Script" uid="uid://d2ncm1dxgro55" path="res://Scripts/linear_movement.gd" id="3_m2fcd"]
 [ext_resource type="PackedScene" uid="uid://b2gj8t4k3wno1" path="res://Prefab/Components/health_component.tscn" id="4_buljt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0n31"]
