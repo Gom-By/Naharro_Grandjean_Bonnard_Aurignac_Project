@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://ds5i0m42gfvyv"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_7rlfd"]
+[ext_resource type="Script" uid="uid://dweavcngxki66" path="res://Scripts/player.gd" id="1_7rlfd"]
 [ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_6hevb"]
 [ext_resource type="PackedScene" uid="uid://b2gj8t4k3wno1" path="res://Prefab/Components/health_component.tscn" id="3_0jax2"]
-[ext_resource type="Script" path="res://Scripts/shooting_component.gd" id="4_u1ixw"]
+[ext_resource type="Script" uid="uid://buojdqcbparpl" path="res://Scripts/shooting_component.gd" id="4_u1ixw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_exg2l"]
 
