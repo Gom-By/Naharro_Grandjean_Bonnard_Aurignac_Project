@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvtf5yrt2t3ak"]
+
+[ext_resource type="Script" uid="uid://ca1v0uw7pepk6" path="res://main_menu.gd" id="1_06t4h"]
+
+[sub_resource type="Gradient" id="Gradient_rhts7"]
+offsets = PackedFloat32Array(0.154762, 0.785714)
+colors = PackedColorArray(1, 0, 0.862745, 1, 1, 0, 0.862745, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_06t4h"]
+gradient = SubResource("Gradient_rhts7")
+
+[node name="MenuPrincipal" type="Node2D"]
+script = ExtResource("1_06t4h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_06t4h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 356.5
+offset_top = 231.0
+offset_right = 791.5
+offset_bottom = 422.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Menu Principal"
+horizontal_alignment = 1
+
+[node name="BoutonJouer" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Jouer"
+
+[node name="BoutonQuitter" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Quitter"
+
+[connection signal="pressed" from="VBoxContainer/BoutonJouer" to="." method="_on_bouton_jouer_pressed"]
