@@ -1,17 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds5i0m42gfvyv"]
+[gd_scene load_steps=7 format=3 uid="uid://ds5i0m42gfvyv"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_7rlfd"]
+[ext_resource type="Script" uid="uid://b02btc0pjyhae" path="res://Scripts/player.gd" id="1_7rlfd"]
 [ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_6hevb"]
 [ext_resource type="PackedScene" uid="uid://b2gj8t4k3wno1" path="res://Prefab/Components/health_component.tscn" id="3_0jax2"]
-[ext_resource type="Script" path="res://Scripts/shooting_component.gd" id="4_u1ixw"]
+[ext_resource type="Script" uid="uid://bpibob4sxertv" path="res://Scripts/shooting_component.gd" id="4_u1ixw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_exg2l"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ec3bh"]
+radius = 32.0156
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 position = Vector2(556, 287)
+collision_mask = 2
 script = ExtResource("1_7rlfd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 shape = SubResource("CircleShape2D_exg2l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,6 +23,13 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_6hevb")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_0jax2")]
+max_hit_points = 3
 
 [node name="ShootingComponent" type="Node" parent="."]
 script = ExtResource("4_u1ixw")
+
+[node name="HitBox" type="Area2D" parent="." groups=["player"]]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" groups=["player"]]
+shape = SubResource("CircleShape2D_ec3bh")
