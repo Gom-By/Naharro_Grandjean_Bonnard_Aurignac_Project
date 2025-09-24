@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1fy27qcok2y6"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_ctfer"]
+[ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_y83vb"]
+[ext_resource type="Script" path="res://Scripts/linear_movement.gd" id="3_m2fcd"]
+[ext_resource type="PackedScene" uid="uid://b2gj8t4k3wno1" path="res://Prefab/Components/health_component.tscn" id="4_buljt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0n31"]
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+position = Vector2(401, 92)
+collision_layer = 2
+script = ExtResource("1_ctfer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l0n31")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.510874, 0.510874)
+texture = ExtResource("2_y83vb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -58.0
+offset_right = 33.0
+offset_bottom = -35.0
+text = "Ennemy"
+
+[node name="MovementComponent" type="Node" parent="."]
+script = ExtResource("3_m2fcd")
+lifetime = 7.0
+target_position = Vector2(0, 1)
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_buljt")]
+max_hit_points = 3

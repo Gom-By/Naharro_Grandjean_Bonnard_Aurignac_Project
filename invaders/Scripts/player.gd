@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @export var speed: float = 1
 
+func _ready() -> void:
+	pass
+
 func _physics_process(delta: float) -> void:
 	if(get_global_mouse_position().distance_to(global_position) < 20):
 		return 
