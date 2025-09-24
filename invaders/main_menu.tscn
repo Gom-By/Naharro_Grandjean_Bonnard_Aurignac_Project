@@ -50,3 +50,4 @@ theme_override_font_sizes/font_size = 30
 text = "Quitter"
 
 [connection signal="pressed" from="VBoxContainer/BoutonJouer" to="." method="_on_bouton_jouer_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoutonQuitter" to="." method="_on_bouton_quitter_pressed"]
