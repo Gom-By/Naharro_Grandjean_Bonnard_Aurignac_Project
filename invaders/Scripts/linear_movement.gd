@@ -13,7 +13,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	obj.global_position += _direction * speed * delta
-
 	_time_alive += delta
 	if _time_alive >= lifetime:
 		obj.queue_free()

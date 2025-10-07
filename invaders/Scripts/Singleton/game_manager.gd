@@ -2,6 +2,7 @@ extends Node
 
 @onready var pre_enemy := preload("res://Prefab/Enemy.tscn")
 var enemies : Array[Enemy] = []
+var max_enemies := 5
 
 func _ready() -> void:
 	var timer := Timer.new()
@@ -11,10 +12,12 @@ func _ready() -> void:
 	add_child(timer)
 	timer.timeout.connect(spawn_enemy)
 
+# update enemies field 
+# if number of enemies doesn't reach max_enemies 
+# spawn an enemy at the top of the screen
 func spawn_enemy() -> void:
-	update_enemies()
-	print_debug("enemies :", enemies)
-	if(enemies.size() >= 5 ): return
+	enemies.filter(is_instance_valid)
+	if(enemies.size() >= max_enemies ): return
 	
 	var enemy: Node2D = pre_enemy.instantiate()
 	get_tree().current_scene.call_deferred("add_child", enemy)
@@ -25,6 +28,3 @@ func spawn_enemy() -> void:
 	
 	enemy.global_position = Vector2(pos_x, 0);
 	enemies.append(enemy)
-
-func update_enemies() :
-	enemies = enemies.filter(is_instance_valid)
