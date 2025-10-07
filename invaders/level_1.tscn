@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqmmq0spvvj83"]
+[gd_scene load_steps=4 format=3 uid="uid://dqmmq0spvvj83"]
 
 [ext_resource type="PackedScene" uid="uid://ds5i0m42gfvyv" path="res://Prefab/Player.tscn" id="2_ghhsa"]
 [ext_resource type="PackedScene" uid="uid://dfet3gi67w0vl" path="res://Prefab/bullet.tscn" id="3_dhodo"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_hbghi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 131, -1, 0, 0, 0, 0, 1047, -1)
+}
+point_count = 2
+
+[node name="level_1" type="Node2D"]
+
+[node name="SpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hbghi")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SpawnPath"]
+position = Vector2(131, -1)
 
 [node name="Bullet" parent="." groups=["p_bullets"] instance=ExtResource("3_dhodo")]
 
