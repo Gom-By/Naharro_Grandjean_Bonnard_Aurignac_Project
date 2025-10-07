@@ -25,11 +25,17 @@ offset_top = -58.0
 offset_right = 33.0
 offset_bottom = -35.0
 text = "Ennemy"
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_fwtxu")]
+max_hit_points = 3
 
 [node name="MovementComponent" type="Node" parent="."]
-script = ExtResource("3_m2fcd")
-lifetime = 7.0
+script = ExtResource("3_13mnm")
 target_position = Vector2(0, 1)
 
-[node name="HealthComponent" parent="." instance=ExtResource("4_buljt")]
-max_hit_points = 3
+[node name="HitBox" type="Area2D" parent="." groups=["player"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" groups=["player"]]
+shape = SubResource("CircleShape2D_5mhyj")
