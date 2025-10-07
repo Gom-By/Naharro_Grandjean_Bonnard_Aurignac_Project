@@ -12,8 +12,13 @@ config_version=5
 
 config/name="Invaders"
 run/main_scene="res://level_1.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_physics/layer_1="allies"
+2d_physics/layer_2="enemies"
 
 [rendering]
 
