@@ -1,5 +1,7 @@
 extends Node
 
+signal despawn
+
 @onready var obj : Node2D = get_parent()
 @export var speed: float = 100.0
 @export var lifetime: float = 5.0
@@ -13,6 +15,3 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	obj.global_position += _direction * speed * delta
-	_time_alive += delta
-	if _time_alive >= lifetime:
-		obj.queue_free()
