@@ -28,3 +28,6 @@ func spawn_enemy() -> void:
 	
 	enemy.global_position = Vector2(pos_x, 0);
 	enemies.append(enemy)
+
+func reset_enemies(node: Enemy):
+	enemies.erase(node)

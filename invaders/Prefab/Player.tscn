@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://b02btc0pjyhae" path="res://Scripts/player.gd" id="1_7rlfd"]
 [ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_6hevb"]
 [ext_resource type="PackedScene" uid="uid://b2gj8t4k3wno1" path="res://Prefab/Components/health_component.tscn" id="3_0jax2"]
-[ext_resource type="Script" uid="uid://bpibob4sxertv" path="res://Scripts/shooting_component.gd" id="4_u1ixw"]
+[ext_resource type="Script" uid="uid://c2fvoe3d6ohql" path="res://Scripts/shooting_component.gd" id="4_u1ixw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_exg2l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ec3bh"]
-radius = 32.0156
+radius = 39.0512
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 position = Vector2(556, 287)
@@ -33,4 +33,5 @@ script = ExtResource("4_u1ixw")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" groups=["player"]]
+scale = Vector2(1.05, 1.05)
 shape = SubResource("CircleShape2D_ec3bh")
