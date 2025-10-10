@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ds5i0m42gfvyv" path="res://Prefab/Player.tscn" id="2_ghhsa"]
 [ext_resource type="PackedScene" uid="uid://dfet3gi67w0vl" path="res://Prefab/bullet.tscn" id="3_dhodo"]
+[ext_resource type="PackedScene" uid="uid://kl6dmicyyc5d" path="res://Prefab/Enemy.tscn" id="6_j7kpp"]
+[ext_resource type="Script" uid="uid://bsw4fh3hoybwj" path="res://Scripts/enemy.gd" id="7_bjebc"]
 
 [sub_resource type="Curve2D" id="Curve2D_hbghi"]
 _data = {
@@ -10,6 +12,8 @@ _data = {
 point_count = 2
 
 [node name="level_1" type="Node2D"]
+
+[node name="Node2D" type="Node2D"]
 
 [node name="SpawnPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_hbghi")
@@ -20,4 +24,6 @@ position = Vector2(131, -1)
 [node name="Bullet" parent="." groups=["p_bullets"] instance=ExtResource("3_dhodo")]
 
 [node name="Player" parent="." instance=ExtResource("2_ghhsa")]
-collision_mask = 2
+
+[node name="Enemy" parent="." groups=["enemies"] instance=ExtResource("6_j7kpp")]
+script = ExtResource("7_bjebc")
