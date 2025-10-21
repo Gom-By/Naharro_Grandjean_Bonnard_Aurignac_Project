@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqmmq0spvvj83"]
+[gd_scene load_steps=7 format=3 uid="uid://dqmmq0spvvj83"]
 
 [ext_resource type="Script" uid="uid://c7lmyqufr5w8i" path="res://Levels/level_1.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://ds5i0m42gfvyv" path="res://Scenes/Player/Player.tscn" id="2_ghhsa"]
+[ext_resource type="PackedScene" uid="uid://ignour2ukwdx" path="res://menu_pause/menu_pause.tscn" id="2_syshm"]
 [ext_resource type="PackedScene" uid="uid://dfet3gi67w0vl" path="res://Scenes/Bullet/bullet.tscn" id="3_dhodo"]
 [ext_resource type="PackedScene" uid="uid://kl6dmicyyc5d" path="res://Scenes/Enemy/Enemy.tscn" id="6_j7kpp"]
 
@@ -13,6 +14,10 @@ point_count = 2
 
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_rf6l5")
+
+[node name="MenuPause" parent="." instance=ExtResource("2_syshm")]
+process_mode = 3
+visible = false
 
 [node name="SpawnPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_hbghi")
