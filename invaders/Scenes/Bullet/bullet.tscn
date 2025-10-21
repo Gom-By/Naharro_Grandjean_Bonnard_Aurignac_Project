@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfet3gi67w0vl"]
 
-[ext_resource type="Script" uid="uid://c1y3trlqycmip" path="res://Scripts/bullet.gd" id="1_52kkt"]
-[ext_resource type="Script" uid="uid://1mehxeh7s43l" path="res://Scripts/linear_movement.gd" id="1_n0t1t"]
+[ext_resource type="Script" uid="uid://bju7wi5dvl87h" path="res://Scenes/Bullet/bullet.gd" id="1_52kkt"]
+[ext_resource type="Script" uid="uid://bprudnejjdfub" path="res://Components/linear_movement.gd" id="1_n0t1t"]
 [ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_2708a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dw6o6"]

@@ -1,6 +1,6 @@
 extends Node
 
-@onready var pre_bullet := preload("res://Prefab/bullet.tscn")
+@onready var pre_bullet := preload("res://Scenes/Bullet/bullet.tscn")
 
 func _ready() -> void:
 	var timer := Timer.new()

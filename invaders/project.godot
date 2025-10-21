@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Invaders"
-run/main_scene="res://level_1.tscn"
+run/main_scene="res://Levels/level_1.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://Scripts/Singleton/game_manager.gd"
+GameManager="*res://Singletons/game_manager.gd"
 
 [layer_names]
 
