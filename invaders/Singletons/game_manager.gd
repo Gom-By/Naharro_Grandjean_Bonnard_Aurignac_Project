@@ -1,16 +1,9 @@
 extends Node
 
 @onready var pre_enemy := preload("res://Scenes/Enemy/Enemy.tscn")
+
 var enemies : Array[Enemy] = []
 var max_enemies := 5
-
-func _ready() -> void:
-	var timer := Timer.new()
-	timer.wait_time = 1
-	timer.one_shot = false
-	timer.autostart = true
-	add_child(timer)
-	timer.timeout.connect(spawn_enemy)
 
 # update enemies field 
 # if number of enemies doesn't reach max_enemies 
