@@ -23,6 +23,8 @@ GameManager="*res://Singletons/game_manager.gd"
 
 2d_physics/layer_1="allies"
 2d_physics/layer_2="enemies"
+2d_physics/layer_3="items"
+2d_physics/layer_8="walls"
 
 [rendering]
 

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Drop" load_steps=3 format=3 uid="uid://b4knggue3yrps"]
+
+[ext_resource type="PackedScene" uid="uid://bxw2sk3rsagna" path="res://Scenes/Items/damage_boost.tscn" id="1_80vcc"]
+[ext_resource type="Script" uid="uid://d2uojwtpr4hnl" path="res://Scenes/Items/drop.gd" id="2_debd8"]
+
+[resource]
+script = ExtResource("2_debd8")
+name = "AttackBoost"
+count = 1
+max_count = 10
+bufftype = 2
+potency = 3.0
+drop_chance = 0.3
+scene = ExtResource("1_80vcc")
+metadata/_custom_type_script = "uid://d2uojwtpr4hnl"

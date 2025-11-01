@@ -1,9 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://kl6dmicyyc5d"]
+[gd_scene load_steps=11 format=3 uid="uid://kl6dmicyyc5d"]
 
 [ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="1_5mhyj"]
 [ext_resource type="Script" uid="uid://bsw4fh3hoybwj" path="res://Scenes/Enemy/enemy.gd" id="1_fwtxu"]
 [ext_resource type="PackedScene" uid="uid://b2gj8t4k3wno1" path="res://Components/Health Component/health_component.tscn" id="2_fwtxu"]
+[ext_resource type="Script" uid="uid://d2uojwtpr4hnl" path="res://Scenes/Items/drop.gd" id="2_seemo"]
 [ext_resource type="Script" uid="uid://bprudnejjdfub" path="res://Components/linear_movement.gd" id="3_13mnm"]
+[ext_resource type="Script" uid="uid://dc66mepaxyvp6" path="res://Components/stats.gd" id="3_ljmj3"]
+[ext_resource type="Resource" uid="uid://b4knggue3yrps" path="res://Scenes/Items/damage_boost_type1.tres" id="3_shrp6"]
+
+[sub_resource type="Resource" id="Resource_shrp6"]
+script = ExtResource("3_ljmj3")
+name = "Enemy"
+health = 3
+damage = 1.0
+speed = 1.0
+loot = Array[ExtResource("2_seemo")]([ExtResource("3_shrp6")])
+metadata/_custom_type_script = "uid://dc66mepaxyvp6"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1n2c"]
 
@@ -11,9 +23,9 @@
 radius = 42.0476
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["enemies"]]
-position = Vector2(401, 92)
 collision_layer = 2
 script = ExtResource("1_fwtxu")
+stats = SubResource("Resource_shrp6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemies"]]
 shape = SubResource("CircleShape2D_s1n2c")
@@ -31,7 +43,6 @@ text = "Ennemy"
 metadata/_edit_use_anchors_ = true
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_fwtxu")]
-max_hit_points = 3
 
 [node name="MovementComponent" type="Node" parent="."]
 script = ExtResource("3_13mnm")
@@ -43,3 +54,6 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" groups=["player"]]
 scale = Vector2(1.05, 1.05)
 shape = SubResource("CircleShape2D_5mhyj")
+
+[connection signal="death" from="HealthComponent" to="." method="_on_health_component_death"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

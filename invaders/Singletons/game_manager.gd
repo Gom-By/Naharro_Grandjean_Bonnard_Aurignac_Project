@@ -2,7 +2,7 @@ extends Node
 
 @onready var pre_enemy := preload("res://Scenes/Enemy/Enemy.tscn")
 
-var enemies : Array[Enemy] = []
+var enemies: Array[Enemy]
 var max_enemies := 5
 
 # update enemies field 
