@@ -11,8 +11,9 @@
 script = ExtResource("3_t26db")
 name = "Player"
 health = 5
+speed = 1.15
 damage = 1.0
-speed = 1.5
+angle = 0.0
 loot = Array[ExtResource("2_4wape")]([])
 metadata/_custom_type_script = "uid://dc66mepaxyvp6"
 

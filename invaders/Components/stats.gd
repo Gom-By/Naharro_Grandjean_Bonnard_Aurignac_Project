@@ -3,8 +3,9 @@ extends Resource
 
 @export var name: String
 @export var health: int
-@export var damage: float
 @export var speed: float
+@export var damage: float
+@export var angle: float
 @export var loot: Array[Drop]
 
 #func _init(name: String, health: int, damage: int, speed: float, loot: Array[Drop]) -> void:

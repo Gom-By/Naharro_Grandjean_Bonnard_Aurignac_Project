@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Drop" load_steps=3 format=3 uid="uid://bwq031aqrrht1"]
+
+[ext_resource type="PackedScene" uid="uid://b6unvlel4554t" path="res://Scenes/Items/fire_upgrade/fire_upgrade.tscn" id="1_qy4kj"]
+[ext_resource type="Script" uid="uid://d2uojwtpr4hnl" path="res://Scenes/Items/drop.gd" id="2_b7myd"]
+
+[resource]
+script = ExtResource("2_b7myd")
+name = "FireUpgrade"
+count = 1
+max_count = 3
+potency = 1.5
+drop_chance = 0.1
+scene = ExtResource("1_qy4kj")
+metadata/_custom_type_script = "uid://d2uojwtpr4hnl"

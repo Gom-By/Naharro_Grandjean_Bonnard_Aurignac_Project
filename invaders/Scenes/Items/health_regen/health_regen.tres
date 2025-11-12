@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Drop" load_steps=3 format=3 uid="uid://ddoca1n0bow2e"]
+
+[ext_resource type="Script" uid="uid://d2uojwtpr4hnl" path="res://Scenes/Items/drop.gd" id="1_ab7x1"]
+[ext_resource type="PackedScene" uid="uid://x08uc7psn8au" path="res://Scenes/Items/health_regen/health_regen.tscn" id="1_kabxs"]
+
+[resource]
+script = ExtResource("1_ab7x1")
+name = "HealthRegen"
+count = 1
+max_count = 1
+potency = 1.0
+drop_chance = 0.3
+scene = ExtResource("1_kabxs")
+metadata/_custom_type_script = "uid://d2uojwtpr4hnl"

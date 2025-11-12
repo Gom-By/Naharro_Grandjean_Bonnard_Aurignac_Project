@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kl6dmicyyc5d"]
+[gd_scene load_steps=13 format=3 uid="uid://kl6dmicyyc5d"]
 
 [ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="1_5mhyj"]
 [ext_resource type="Script" uid="uid://bsw4fh3hoybwj" path="res://Scenes/Enemy/enemy.gd" id="1_fwtxu"]
@@ -6,15 +6,18 @@
 [ext_resource type="Script" uid="uid://d2uojwtpr4hnl" path="res://Scenes/Items/drop.gd" id="2_seemo"]
 [ext_resource type="Script" uid="uid://bprudnejjdfub" path="res://Components/linear_movement.gd" id="3_13mnm"]
 [ext_resource type="Script" uid="uid://dc66mepaxyvp6" path="res://Components/stats.gd" id="3_ljmj3"]
-[ext_resource type="Resource" uid="uid://b4knggue3yrps" path="res://Scenes/Items/damage_boost_type1.tres" id="3_shrp6"]
+[ext_resource type="Resource" uid="uid://bwq031aqrrht1" path="res://Scenes/Items/fire_upgrade/fire_upgrade.tres" id="3_shrp6"]
+[ext_resource type="Resource" uid="uid://b4knggue3yrps" path="res://Scenes/Items/damage_boost/damage_boost.tres" id="4_xqoj7"]
+[ext_resource type="Resource" uid="uid://ddoca1n0bow2e" path="res://Scenes/Items/health_regen/health_regen.tres" id="5_3jkxs"]
 
 [sub_resource type="Resource" id="Resource_shrp6"]
 script = ExtResource("3_ljmj3")
 name = "Enemy"
 health = 3
+speed = 0.0
 damage = 1.0
-speed = 1.0
-loot = Array[ExtResource("2_seemo")]([ExtResource("3_shrp6")])
+angle = 0.0
+loot = Array[ExtResource("2_seemo")]([ExtResource("3_shrp6"), ExtResource("4_xqoj7"), ExtResource("5_3jkxs")])
 metadata/_custom_type_script = "uid://dc66mepaxyvp6"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1n2c"]

@@ -20,6 +20,7 @@ func drop_item() -> void:
 			var drop: Node2D = i.scene.instantiate()
 			get_tree().current_scene.call_deferred("add_child", drop)
 			drop.global_position = global_position
+			break
 
 func _on_health_component_death() -> void:
 	drop_item()

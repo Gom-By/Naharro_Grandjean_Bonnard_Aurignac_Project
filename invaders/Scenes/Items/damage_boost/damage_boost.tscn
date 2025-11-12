@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxw2sk3rsagna"]
 
-[ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="1_v4r8m"]
-[ext_resource type="Script" uid="uid://blk11scq6han0" path="res://Scenes/Items/damage_boost.gd" id="1_vdx2p"]
+[ext_resource type="Script" uid="uid://blk11scq6han0" path="res://Scenes/Items/damage_boost/damage_boost.gd" id="1_injl1"]
+[ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_6bjam"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1yp2u"]
 
 [node name="DamageBoost" type="Area2D"]
 collision_layer = 4
-script = ExtResource("1_vdx2p")
+script = ExtResource("1_injl1")
 potency = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,7 +16,7 @@ shape = SubResource("CircleShape2D_1yp2u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(-0.299111, -0.299111)
-texture = ExtResource("1_v4r8m")
+texture = ExtResource("2_6bjam")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
