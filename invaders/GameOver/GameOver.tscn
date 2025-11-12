@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cj0f2ktc65qrd"]
+[gd_scene load_steps=3 format=3 uid="uid://cj0f2ktc65qrd"]
 
 [ext_resource type="Script" uid="uid://60080x36ew5p" path="res://GameOver/GameOver.gd" id="1_bed4b"]
+[ext_resource type="Script" uid="uid://cnse7opa1y1s5" path="res://Scenes/Score/Score.gd" id="2_pyvlu"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -27,9 +28,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -109.0
-offset_top = -94.0
+offset_top = -174.0
 offset_right = 109.0
-offset_bottom = -39.0
+offset_bottom = -119.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
@@ -51,11 +52,37 @@ grow_vertical = 2
 
 [node name="Rejouer" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Rejouer"
 
 [node name="Menu_Principal" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Menu Principal"
+theme_override_font_sizes/font_size = 20
+text = " Menu Principal "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -20.0
+offset_right = 37.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score_text" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Score : "
+
+[node name="Score_number" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+script = ExtResource("2_pyvlu")
 
 [connection signal="pressed" from="VBoxContainer/Rejouer" to="." method="_on_rejouer_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu_Principal" to="." method="_on_menu_principal_pressed"]
