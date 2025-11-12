@@ -16,4 +16,5 @@ func take_damage(amount: int) -> void:
 	current_health -= amount 
 	if current_health <= 0:
 		death.emit()
+		get_tree().change_scene_to_file("res://GameOver/GameOver.tscn")
 		get_parent().queue_free()
