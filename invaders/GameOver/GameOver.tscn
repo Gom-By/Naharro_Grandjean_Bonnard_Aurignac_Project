@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj0f2ktc65qrd"]
+
+[ext_resource type="Script" uid="uid://60080x36ew5p" path="res://GameOver/GameOver.gd" id="1_bed4b"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bed4b")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver_Text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Game Over"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.12
+offset_top = 55.995
+offset_right = 61.88
+offset_bottom = 121.995
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rejouer" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Rejouer"
+
+[node name="Menu_Principal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Menu Principal"
+
+[connection signal="pressed" from="VBoxContainer/Rejouer" to="." method="_on_rejouer_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu_Principal" to="." method="_on_menu_principal_pressed"]
