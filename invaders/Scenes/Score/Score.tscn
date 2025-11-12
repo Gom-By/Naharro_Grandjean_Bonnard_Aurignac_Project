@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://0d3hmc0c2h8s"]
+
+[ext_resource type="Texture2D" uid="uid://45qlm7vf6gmg" path="res://Assets/logo_nb_kills.png" id="1_01me3"]
+[ext_resource type="Script" uid="uid://cnse7opa1y1s5" path="res://Scenes/Score/Score.gd" id="2_bfyhe"]
+
+[node name="Score" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, 16)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_01me3")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 14.0
+offset_right = 102.0
+offset_bottom = 37.0
+scale = Vector2(2, 2)
+text = "="
+script = ExtResource("2_bfyhe")

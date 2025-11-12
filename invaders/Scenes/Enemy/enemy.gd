@@ -33,6 +33,8 @@ func _on_body_entered(body: Node) -> void:
 		if body.has_node("HealthComponent"):
 			var health: HealthComponent = body.get_node("HealthComponent")
 			health.take_damage(1)
+			if health.current_health <= 0:
+				get_tree().change_scene_to_file("res://GameOver/GameOver.tscn") 
 			print(health.current_health)
 		print("Player collision " + group_target)
 
@@ -70,4 +72,5 @@ func process_movement_pattern() -> void:
 				is_straight = false
 
 func erase_self():
+	GameManager.score += 1
 	GameManager.enemies.erase(self)

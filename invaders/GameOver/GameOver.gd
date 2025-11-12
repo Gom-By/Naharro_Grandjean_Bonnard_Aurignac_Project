@@ -6,4 +6,5 @@ func _on_menu_principal_pressed() -> void:
 
 
 func _on_rejouer_pressed() -> void:
+	GameManager.score = 0
 	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
