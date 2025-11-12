@@ -11,9 +11,11 @@
 radius = 42.0476
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["enemies"]]
-position = Vector2(401, 92)
 collision_layer = 2
 script = ExtResource("1_fwtxu")
+left_bound = 50
+right_bound = 1100
+straight_distance = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemies"]]
 shape = SubResource("CircleShape2D_s1n2c")
@@ -34,6 +36,7 @@ metadata/_edit_use_anchors_ = true
 max_hit_points = 3
 
 [node name="MovementComponent" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("3_13mnm")
 target_position = Vector2(0, 1)
 
