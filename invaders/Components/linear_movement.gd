@@ -15,3 +15,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	obj.global_position += _direction * speed * delta
+
+func set_direction(direction: Vector2) -> void:
+	_direction = direction
