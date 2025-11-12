@@ -44,15 +44,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
 
-[node name="Button_reprendre" type="Button" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -4.0
+offset_right = 55.5
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Button_reprendre" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Reprendre"
 
-[node name="Button_menuPrincipal" type="Button" parent="HBoxContainer"]
+[node name="Button_menuPrincipal" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Menu"
+text = " Menu principal "
 
-[connection signal="pressed" from="HBoxContainer/Button_reprendre" to="." method="_on_button_reprendre_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button_menuPrincipal" to="." method="_on_button_menu_principal_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_reprendre" to="." method="_on_button_reprendre_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_menuPrincipal" to="." method="_on_button_menu_principal_pressed"]
