@@ -1,11 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://kl6dmicyyc5d"]
 
-[ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="1_5mhyj"]
 [ext_resource type="Script" uid="uid://bsw4fh3hoybwj" path="res://Scenes/Enemy/enemy.gd" id="1_fwtxu"]
+[ext_resource type="Texture2D" uid="uid://btm5b56g1i2ql" path="res://Assets/Enemy_Soldier.png" id="2_02vxf"]
 [ext_resource type="PackedScene" uid="uid://b2gj8t4k3wno1" path="res://Components/Health Component/health_component.tscn" id="2_fwtxu"]
 [ext_resource type="Script" uid="uid://bprudnejjdfub" path="res://Components/linear_movement.gd" id="3_13mnm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1n2c"]
+radius = 36.0555
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5mhyj"]
 radius = 42.0476
@@ -16,17 +17,19 @@ collision_layer = 2
 script = ExtResource("1_fwtxu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemies"]]
+position = Vector2(-2, -2)
 shape = SubResource("CircleShape2D_s1n2c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 9)
 scale = Vector2(0.510874, 0.510874)
-texture = ExtResource("1_5mhyj")
+texture = ExtResource("2_02vxf")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -30.0
-offset_top = -58.0
+offset_top = -57.0
 offset_right = 33.0
-offset_bottom = -35.0
+offset_bottom = -34.0
 text = "Ennemy"
 metadata/_edit_use_anchors_ = true
 
@@ -38,6 +41,7 @@ script = ExtResource("3_13mnm")
 target_position = Vector2(0, 1)
 
 [node name="HitBox" type="Area2D" parent="." groups=["player"]]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" groups=["player"]]
