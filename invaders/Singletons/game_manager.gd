@@ -4,6 +4,7 @@ extends Node
 
 var enemies : Array[Enemy] = []
 var max_enemies := 5
+var score = 0
 
 # update enemies field 
 # if number of enemies doesn't reach max_enemies 

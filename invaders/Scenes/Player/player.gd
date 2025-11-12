@@ -17,3 +17,4 @@ func _physics_process(_delta: float) -> void:
 		get_viewport_rect().position + %Sprite.get_rect().size/2,
 		get_viewport_rect().end - %Sprite.get_rect().size/2
 	)
+	
