@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b02btc0pjyhae" path="res://Scenes/Player/player.gd" id="1_7rlfd"]
 [ext_resource type="Script" uid="uid://d2uojwtpr4hnl" path="res://Scenes/Items/drop.gd" id="2_4wape"]
-[ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_6hevb"]
+[ext_resource type="Texture2D" uid="uid://disys4t8cyplt" path="res://Assets/Player_Soldier.png" id="2_ude3g"]
 [ext_resource type="PackedScene" uid="uid://b2gj8t4k3wno1" path="res://Components/Health Component/health_component.tscn" id="3_0jax2"]
 [ext_resource type="Script" uid="uid://dc66mepaxyvp6" path="res://Components/stats.gd" id="3_t26db"]
 [ext_resource type="PackedScene" uid="uid://i37btdxcpwqh" path="res://Components/Shooting Component/shooting_component.tscn" id="6_4wape"]
@@ -32,8 +32,10 @@ shape = SubResource("CircleShape2D_exg2l")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, -11)
+rotation = 3.14159
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_6hevb")
+texture = ExtResource("2_ude3g")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_0jax2")]
 

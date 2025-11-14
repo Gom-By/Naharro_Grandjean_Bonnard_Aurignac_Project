@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://ignour2ukwdx"]
+
+[ext_resource type="Script" uid="uid://dsqurbcx2w85n" path="res://menu_pause/menu_pause.gd" id="1_cgci2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_121wk"]
+font_size = 40
+
+[node name="MenuPause" type="CanvasLayer"]
+script = ExtResource("1_cgci2")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label_pause" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.358
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = 9.01599
+offset_right = 60.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_121wk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -20.0
+offset_right = 84.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -4.0
+offset_right = 55.5
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Button_reprendre" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Reprendre"
+
+[node name="Button_menuPrincipal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = " Menu principal "
+
+[connection signal="pressed" from="VBoxContainer/Button_reprendre" to="." method="_on_button_reprendre_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_menuPrincipal" to="." method="_on_button_menu_principal_pressed"]

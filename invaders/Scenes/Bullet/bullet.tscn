@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bju7wi5dvl87h" path="res://Scenes/Bullet/bullet.gd" id="1_52kkt"]
 [ext_resource type="Script" uid="uid://bprudnejjdfub" path="res://Components/linear_movement.gd" id="1_n0t1t"]
-[ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_2708a"]
+[ext_resource type="Texture2D" uid="uid://jxuixp61raj4" path="res://Assets/Bullet.png" id="2_nt0l2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dw6o6"]
+radius = 9.0
 
 [node name="Bullet" type="Area2D"]
 collision_mask = 2
@@ -14,8 +15,10 @@ script = ExtResource("1_52kkt")
 shape = SubResource("CapsuleShape2D_dw6o6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0732265, 0.193228)
-texture = ExtResource("2_2708a")
+position = Vector2(-5.58561e-08, -0.999993)
+rotation = 4.71239
+scale = Vector2(0.176976, 0.193228)
+texture = ExtResource("2_nt0l2")
 
 [node name="MovementComponent" type="Node" parent="."]
 script = ExtResource("1_n0t1t")

@@ -13,4 +13,8 @@ func _ready() -> void:
 	_direction = target_position.normalized().rotated(angle)
 
 func _physics_process(delta: float) -> void:
-	obj.position += _direction * speed_mult * delta * 100
+
+obj.position += _direction * speed_mult * delta * 100
+
+func set_direction(direction: Vector2) -> void:
+	_direction = direction
