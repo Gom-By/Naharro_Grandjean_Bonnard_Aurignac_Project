@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6unvlel4554t"]
+
+[ext_resource type="Script" uid="uid://cbac2j7labdn1" path="res://Scenes/Items/fire_upgrade/fire_upgrade.gd" id="1_edv1u"]
+[ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_un6oa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1yp2u"]
+
+[node name="FireUpgrade" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_edv1u")
+potency = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(-2.58287, -2.58287)
+shape = SubResource("CircleShape2D_1yp2u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(-0.299111, -0.299111)
+texture = ExtResource("2_un6oa")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

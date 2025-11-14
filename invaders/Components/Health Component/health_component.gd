@@ -2,18 +2,20 @@ class_name HealthComponent extends Node
 
 signal death
 
-@export var max_hit_points := 10
-var current_health := 10
+var max_hit_points : float = 0
+var current_health : float = 0
 
-func _ready() -> void:
-	current_health = max_hit_points
+func reset(max_hit: int): 
+	max_hit_points = max_hit
+	current_health = max_hit
 
 # inflict damage on an enemy reducing current_health
 # emit death signal when current_health <= 0
-# and free the parent object
 # params:  amount -> the amount of damage to reduce from current_health
-func take_damage(amount: int) -> void:
+func take_damage(amount: float) -> void:
 	current_health -= amount 
 	if current_health <= 0:
 		death.emit()
-		get_parent().queue_free()
+
+func heal(amount: int) -> void: 
+	current_health = clampf(1.0, current_health+amount, max_hit_points)
