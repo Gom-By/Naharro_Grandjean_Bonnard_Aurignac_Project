@@ -12,6 +12,7 @@ func _on_timer_timeout() -> void:
 		$Timer.wait_time = 0.05
 	else: 
 		$Timer.wait_time = 0.3
+		offset = 0
 	(bullet.get_node("MovementComponent") as LinearMovement).angle = randf_range(get_parent().rotation - offset, get_parent().rotation + offset)
 	(bullet as Bullet).damage = (get_parent().stats as Stats).damage 
 	get_tree().current_scene.add_child(bullet)
