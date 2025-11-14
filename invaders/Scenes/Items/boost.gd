@@ -10,7 +10,7 @@ var player: Player = null
 func _ready() -> void:
 	connect("body_entered", _on_body_entered)
 	$Timer.connect("timeout", _on_timer_timeout)
-	
+
 func _on_body_entered(body: Node2D) -> void:
 	$Timer.start()
 	if(body.is_in_group("player")):

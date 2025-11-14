@@ -18,4 +18,5 @@ func take_damage(amount: float) -> void:
 		death.emit()
 
 func heal(amount: int) -> void: 
-	current_health = clampf(1.0, current_health+amount, max_hit_points)
+	print_debug(self, " got healed")
+	current_health += amount

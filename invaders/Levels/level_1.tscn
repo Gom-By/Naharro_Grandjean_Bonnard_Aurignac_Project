@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqmmq0spvvj83"]
+[gd_scene load_steps=9 format=3 uid="uid://dqmmq0spvvj83"]
 
 [ext_resource type="Script" uid="uid://c7lmyqufr5w8i" path="res://Levels/level_1.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://ds5i0m42gfvyv" path="res://Scenes/Player/Player.tscn" id="2_ghhsa"]
 [ext_resource type="PackedScene" uid="uid://ignour2ukwdx" path="res://menu_pause/menu_pause.tscn" id="2_syshm"]
-[ext_resource type="PackedScene" uid="uid://dfet3gi67w0vl" path="res://Scenes/Bullet/bullet.tscn" id="3_dhodo"]
 [ext_resource type="Script" uid="uid://dorgcbrcww343" path="res://Components/walls.gd" id="5_syshm"]
 [ext_resource type="PackedScene" uid="uid://kl6dmicyyc5d" path="res://Scenes/Enemy/Enemy.tscn" id="6_j7kpp"]
 [ext_resource type="PackedScene" uid="uid://0d3hmc0c2h8s" path="res://Scenes/Score/Score.tscn" id="6_rfktq"]
@@ -29,13 +28,14 @@ curve = SubResource("Curve2D_hbghi")
 [node name="PathFollow2D" type="PathFollow2D" parent="SpawnPath"]
 position = Vector2(131, -1)
 
-[node name="Bullet" parent="." groups=["p_bullets"] instance=ExtResource("3_dhodo")]
-
 [node name="Player" parent="." instance=ExtResource("2_ghhsa")]
 position = Vector2(559, 326)
 
 [node name="Enemy" parent="." instance=ExtResource("6_j7kpp")]
 position = Vector2(547, 69)
+left_bound = 0
+right_bound = 0
+straight_distance = 0
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -44,8 +44,8 @@ autostart = true
 script = ExtResource("5_syshm")
 
 [node name="WallBottom" type="Area2D" parent="Walls"]
-position = Vector2(579, 671)
-scale = Vector2(58.2, 1)
+position = Vector2(581, 717)
+scale = Vector2(68.12, 1)
 collision_layer = 128
 collision_mask = 3
 
@@ -53,8 +53,8 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_rfktq")
 
 [node name="WallTop" type="Area2D" parent="Walls"]
-position = Vector2(579, -22.9999)
-scale = Vector2(58.2, 1)
+position = Vector2(579, -91)
+scale = Vector2(68.16, 1)
 collision_layer = 128
 collision_mask = 3
 
@@ -62,9 +62,9 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_rfktq")
 
 [node name="Area2D3" type="Area2D" parent="Walls"]
-position = Vector2(1172, 324)
+position = Vector2(1258, 318)
 rotation = 1.5708
-scale = Vector2(34.8981, 1)
+scale = Vector2(39.7381, 1)
 collision_layer = 128
 collision_mask = 3
 
@@ -72,9 +72,9 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_rfktq")
 
 [node name="Area2D4" type="Area2D" parent="Walls"]
-position = Vector2(-15, 324)
+position = Vector2(-91, 312)
 rotation = 1.5708
-scale = Vector2(34.8981, 1)
+scale = Vector2(39.8981, 1)
 collision_layer = 128
 collision_mask = 3
 

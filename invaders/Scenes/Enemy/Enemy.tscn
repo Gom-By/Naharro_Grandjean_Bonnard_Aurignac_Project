@@ -26,12 +26,10 @@ radius = 36.0555
 [sub_resource type="CircleShape2D" id="CircleShape2D_5mhyj"]
 radius = 42.0476
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemies"]]
+[node name="CharacterBody2D2" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
 script = ExtResource("1_fwtxu")
-
 stats = SubResource("Resource_shrp6")
-
 left_bound = 50
 right_bound = 1100
 straight_distance = 100
@@ -61,7 +59,6 @@ script = ExtResource("3_13mnm")
 target_position = Vector2(0, 1)
 
 [node name="HitBox" type="Area2D" parent="." groups=["player"]]
-visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" groups=["player"]]

@@ -27,7 +27,6 @@ func _ready() -> void:
 	set_random_movement_pattern()
 	init_movement_pattern()
 	collision.connect("body_entered", _on_body_entered)
-	$HealthComponent.connect("death", erase_self)
 
 func _physics_process(_delta: float) -> void:
 	process_movement_pattern()
@@ -38,7 +37,7 @@ func _on_body_entered(body: Node) -> void:
 			var health: HealthComponent = body.get_node("HealthComponent")
 			health.take_damage(1)
 			if health.current_health <= 0:
-				get_tree().change_scene_to_file("res://GameOver/GameOver.tscn") 
+				get_tree().call_deferred("change_scene_to_file", "res://GameOver/GameOver.tscn") 
 			print(health.current_health)
 		print("Player collision " + group_target)
 
@@ -57,7 +56,7 @@ func init_movement_pattern() -> void:
 		MOVEMENT_PATTERN.HORIZONTAL:
 			%MovementComponent.set_direction(Vector2.RIGHT)
 			last_direction = Vector2.RIGHT
-			%MovementComponent.speed *= 2
+			%MovementComponent.speed_mult *= 2
 
 func process_movement_pattern() -> void:
 	match movement_pattern:
@@ -76,7 +75,6 @@ func process_movement_pattern() -> void:
 				is_straight = false
 
 func erase_self():
-	GameManager.score += 1
 	GameManager.enemies.erase(self)
 	queue_free()
 
@@ -89,6 +87,7 @@ func drop_item() -> void:
 			break
 
 func _on_health_component_death() -> void:
+	GameManager.score += 1
 	drop_item()
 	queue_free()
 	GameManager.enemies.erase(self)

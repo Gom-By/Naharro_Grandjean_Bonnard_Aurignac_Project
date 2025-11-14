@@ -4,9 +4,9 @@ extends Boost
 func stat_increased(p: Player, angle: float):  
 	player = p
 	base = p.stats.angle
-	p.stats.angle += clampf(angle, -40, 40)
+	print_debug(angle)
+	p.stats.angle += clampf(angle, -20, 20)
 	buff_increase = p.stats.angle - base
-	print_debug("buff taken, new angle :", p.stats.angle)
 
 func _on_timer_timeout():
 	if (player):
