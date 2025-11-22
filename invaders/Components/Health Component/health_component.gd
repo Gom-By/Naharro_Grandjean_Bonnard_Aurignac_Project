@@ -5,6 +5,7 @@ signal death
 var max_hit_points : float = 0
 var current_health : float = 0
 
+# reset the health of the character to it's maximun value
 func reset(max_hit: int): 
 	max_hit_points = max_hit
 	current_health = max_hit
@@ -17,6 +18,7 @@ func take_damage(amount: float) -> void:
 	if current_health <= 0:
 		death.emit()
 
+# heal the character by a certain amount
 func heal(amount: int) -> void: 
 	print_debug(self, " got healed")
 	current_health += amount

@@ -31,6 +31,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	process_movement_pattern()
 
+# Detect collision with other objects of the group_target (player)
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group(group_target):
 		if body.has_node("HealthComponent"):
@@ -41,6 +42,7 @@ func _on_body_entered(body: Node) -> void:
 			print(health.current_health)
 		print("Player collision " + group_target)
 
+# to have random movement
 func set_random_movement_pattern() -> void:
 	var available_patterns = [
 		MOVEMENT_PATTERN.STRAIGHT,
@@ -49,6 +51,7 @@ func set_random_movement_pattern() -> void:
 	
 	movement_pattern = available_patterns.pick_random()
 
+# The first given movement
 func init_movement_pattern() -> void:
 	match movement_pattern:
 		MOVEMENT_PATTERN.STRAIGHT:
@@ -58,6 +61,7 @@ func init_movement_pattern() -> void:
 			last_direction = Vector2.RIGHT
 			%MovementComponent.speed_mult *= 2
 
+# physics will match the movement pattern selected
 func process_movement_pattern() -> void:
 	match movement_pattern:
 		MOVEMENT_PATTERN.HORIZONTAL:
@@ -78,13 +82,14 @@ func erase_self():
 	GameManager.enemies.erase(self)
 	queue_free()
 
+# drop an item (a buff) from the stas.loot list
 func drop_item() -> void: 
 	for i in stats.loot: 
 		if(randf() < i.drop_chance):
 			var drop: Node2D = i.scene.instantiate()
 			get_tree().current_scene.call_deferred("add_child", drop)
 			drop.global_position = global_position
-			break
+			break # once the item is dropped, can't drop something else
 
 func _on_health_component_death() -> void:
 	GameManager.score += 1

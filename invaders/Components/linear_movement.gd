@@ -1,6 +1,8 @@
 class_name LinearMovement
 extends Node
 
+# This class as for purpose, to move it's parent linearly and infinitely at the same speed
+
 @export var target_position: Vector2
 
 var _direction: Vector2

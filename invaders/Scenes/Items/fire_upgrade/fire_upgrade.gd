@@ -1,6 +1,7 @@
 class_name FireUpgrade
 extends Boost
 
+# increase the angle at witch bullet can be fired 
 func stat_increased(p: Player, angle: float):  
 	player = p
 	base = p.stats.angle

@@ -1,6 +1,7 @@
 class_name HealthRegen
 extends Boost
 
+# regenerate player's health
 func stat_increased(p: Player, potency: float):  
 	print_debug("heal regen active")
 	(p.get_node("HealthComponent") as HealthComponent).heal(potency)

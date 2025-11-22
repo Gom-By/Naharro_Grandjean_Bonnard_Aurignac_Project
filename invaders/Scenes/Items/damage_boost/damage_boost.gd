@@ -1,6 +1,7 @@
 class_name DamageBoost
 extends Boost
 
+# increase damage of the player (that will then increase bullets' damage)
 func stat_increased(p: Player, damage: float):  
 	player = p
 	base = p.stats.damage
