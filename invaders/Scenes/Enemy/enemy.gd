@@ -38,7 +38,7 @@ func _on_body_entered(body: Node) -> void:
 			var health: HealthComponent = body.get_node("HealthComponent")
 			health.take_damage(1)
 			if health.current_health <= 0:
-				get_tree().call_deferred("change_scene_to_file", "res://GameOver/GameOver.tscn") 
+				get_tree().call_deferred("change_scene_to_file", "uid://cj0f2ktc65qrd") 
 			print(health.current_health)
 		print("Player collision " + group_target)
 
