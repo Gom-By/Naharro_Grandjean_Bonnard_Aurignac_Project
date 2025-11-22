@@ -101,3 +101,7 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group(group_target):
 		if body.has_node("HealthComponent"):
 			(body.get_node("HealthComponent") as HealthComponent).take_damage(stats.damage)
+
+func tests(): 
+	if(OS.is_debug_build()):
+		assert(GameManager.enemies)

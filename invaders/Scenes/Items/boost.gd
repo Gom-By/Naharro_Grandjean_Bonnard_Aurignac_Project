@@ -8,6 +8,7 @@ var base: float = 1.0
 var player: Player = null 
 
 func _ready() -> void:
+	test_exist()
 	connect("body_entered", _on_body_entered)
 	$Timer.connect("timeout", _on_timer_timeout)
 
@@ -28,3 +29,7 @@ func stat_increased(_p: Player, _potency: float):
 # make sure stats.current = buff_increase. Combined with the above, it will remove the buff
 func _on_timer_timeout():
 	pass
+	
+func test_exist():
+	if(OS.is_debug_build()):
+		assert($Timer) # test during debug mode
