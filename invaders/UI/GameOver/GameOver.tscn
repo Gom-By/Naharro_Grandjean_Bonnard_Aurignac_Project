@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj0f2ktc65qrd"]
+[gd_scene load_steps=4 format=3 uid="uid://cj0f2ktc65qrd"]
 
 [ext_resource type="Script" uid="uid://60080x36ew5p" path="res://UI/GameOver/GameOver.gd" id="1_bed4b"]
 [ext_resource type="Script" uid="uid://cnse7opa1y1s5" path="res://Scenes/Score/Score.gd" id="2_pyvlu"]
+[ext_resource type="Texture2D" uid="uid://dn1oaxst81e5" path="res://Assets/Start_Beach.png" id="2_qp2x0"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -11,6 +12,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bed4b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 343)
+scale = Vector2(0.9, 0.775781)
+texture = ExtResource("2_qp2x0")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
