@@ -43,14 +43,6 @@ position = Vector2(1, 9)
 scale = Vector2(0.510874, 0.510874)
 texture = ExtResource("2_02vxf")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -30.0
-offset_top = -57.0
-offset_right = 33.0
-offset_bottom = -34.0
-text = "Ennemy"
-metadata/_edit_use_anchors_ = true
-
 [node name="HealthComponent" parent="." instance=ExtResource("2_fwtxu")]
 
 [node name="MovementComponent" type="Node" parent="."]

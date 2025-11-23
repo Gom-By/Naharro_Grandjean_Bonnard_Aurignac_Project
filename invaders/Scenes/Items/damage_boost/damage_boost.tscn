@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxw2sk3rsagna"]
 
 [ext_resource type="Script" uid="uid://blk11scq6han0" path="res://Scenes/Items/damage_boost/damage_boost.gd" id="1_injl1"]
-[ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="2_6bjam"]
+[ext_resource type="Texture2D" uid="uid://byfkha8fhmi64" path="res://Assets/Damage.png" id="2_injl1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1yp2u"]
 
@@ -15,8 +15,10 @@ scale = Vector2(2.4, 2.4)
 shape = SubResource("CircleShape2D_1yp2u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(-0.299111, -0.299111)
-texture = ExtResource("2_6bjam")
+position = Vector2(-4.76837e-07, 9.53674e-07)
+rotation = 3.14159
+scale = Vector2(-0.097, -0.1)
+texture = ExtResource("2_injl1")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0

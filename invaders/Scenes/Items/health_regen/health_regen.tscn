@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://x08uc7psn8au"]
 
 [ext_resource type="Script" uid="uid://bcaesc51tvasx" path="res://Scenes/Items/health_regen/health_regen.gd" id="1_1yp2u"]
-[ext_resource type="Texture2D" uid="uid://8mxk3p0fhwbe" path="res://icon.svg" id="1_rkuyl"]
+[ext_resource type="Texture2D" uid="uid://8mfs4gu2j5ua" path="res://Assets/Health.png" id="2_jny8u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1yp2u"]
 
@@ -15,8 +15,10 @@ scale = Vector2(2.46966, 2.46966)
 shape = SubResource("CircleShape2D_1yp2u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(-0.299111, -0.299111)
-texture = ExtResource("1_rkuyl")
+position = Vector2(-1.90735e-06, -5.72205e-06)
+rotation = 3.14159
+scale = Vector2(-0.0759271, -0.0748936)
+texture = ExtResource("2_jny8u")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
